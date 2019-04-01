@@ -1,0 +1,87 @@
+/** SIMPLE BALANCE STYLE **/
+.balances-ctn {
+    text-align: center;
+    vertical-align: middle;
+}
+
+.balance {
+    display: inline-grid;
+    border: 2px solid darkred;
+    margin: 8% !important;
+    padding: 0 !important;
+    /*float: left;*/
+    border-radius: 12px;
+    align-self: center;
+}
+
+#balance-value-ctn {
+    padding: 40px;
+}
+
+.balance-value, .balance-devise {
+    border-left: solid 4px green;
+    padding: 0 12px;
+}
+
+#monthly-balance-out-value > .balance-value, #monthly-balance-out-value > .balance-devise {
+    border-left: solid 4px red;
+}
+
+.balance-value {
+    font-size: 26px;
+}
+
+.balance-devise {
+    font-size: 20px;
+    color: gray;
+    text-align: left;
+}
+
+.balance-label {
+    border-bottom: 2px solid darkred;
+    width: 100%;
+    display: block;
+    text-align: center;
+    padding: 10px 0;
+    font-size: 28px;
+    font-weight: 600;
+}
+
+#monthly-balance-in-value, #monthly-balance-out-value {
+    padding: 40px;
+    display: inline-grid;
+}
+
+#monthly-balance-in-value {
+    border-right: 2px solid darkred;
+}
+
+#last-transactions {
+    font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+    display: inline-grid;
+}
+
+#last-transactions > table {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
+#last-transactions td, #last-transactions th {
+    /*border: 1px solid #ddd;*/
+    padding: 8px;
+}
+
+#last-transactions tr:nth-child(even){background-color: #f2f2f2;}
+
+#last-transactions tr:hover {background-color: #ddd;}
+
+#last-transactions th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: #4CAF50;
+    color: white;
+}

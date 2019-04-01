@@ -1,0 +1,11 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<header>
+  <nav id="main-nav-bar" class="topnav" *ngIf="clientConnected">
+    <a id="main" routerLink="/main">Main</a>
+    <a id="transaction" routerLink="/transaction">Transaction</a>
+    <a id="history" routerLink="/history">History</a>
+    <a id="profile" routerLink="/profile" style="float:right">Profile</a>
+  </nav>
+  <router-outlet></router-outlet>
+</header>
+
