@@ -1,5 +1,6 @@
 require 'digest'
 require 'date'
+
 #--------------------------------------------------------------------------
 class Transaction
   attr_accessor :sender, :amount, :receiver
@@ -83,12 +84,23 @@ def proof_of_work(last_proof)
   incrementer
 end
 #--------------------------------------------------------------------------
+def proof_of_work_zeroes_method(last_proof)
+  # Find a number p' such that hash(pp') contains leading 4 zeroes, where p is the previous p'.
+  incrementer = rand(1000000000000000000000000)
+  result = Digest::SHA256.hexdigest(last_proof.to_s + incrementer.to_s)
+  now = Time.now
 
-
-#--------------------------------------------------------------------------
+  until result[0..2] == "000"
+    incrementer = rand(1000000000000000000000000)
+    result = Digest::SHA256.hexdigest(last_proof.to_s + incrementer.to_s)
+    puts "Elapsed time : #{Time.now - now}"
+  end
+  incrementer
+end
+#---------------------------------------------------------------------------
 def mine(last_block, transactions_to_add)
   last_proof = last_block.data['proof-of-work']
-  proof = proof_of_work(last_proof)
+  proof = proof_of_work_zeroes_method(last_proof)
   transaction_list = []
   transaction_list << transactions_to_add
   transaction_list << Transaction.new("network", "1", "miner_address")
@@ -102,18 +114,4 @@ def mine(last_block, transactions_to_add)
   Block.new(new_block_index, new_block_timestamp, data, last_block.hash)
 end
 #--------------------------------------------------------------------------
-#
-#blockchain = [create_genesis_block]
-#puts "Genesis Block created"
-#num_of_blocks_to_add = 50
-
-#num_of_blocks_to_add.times do
-#  previous_block = blockchain.last
-#  block_to_add = mine(previous_block)
-#  blockchain << block_to_add
-#  puts "Block #{block_to_add.index} has been added to the blockchain!"
-#  puts "Transaction #{block_to_add.data}"
-#  puts "Hash: #{block_to_add.hash}"
-#  puts ""
-#end
 
