@@ -84,23 +84,24 @@ def proof_of_work(last_proof)
   incrementer
 end
 #--------------------------------------------------------------------------
-def proof_of_work_zeroes_method(last_proof)
+def proof_of_work_zeroes_method(last_proof, difficulty)
   # Find a number p' such that hash(pp') contains leading 4 zeroes, where p is the previous p'.
   incrementer = rand(1000000000000000000000000)
   result = Digest::SHA256.hexdigest(last_proof.to_s + incrementer.to_s)
   now = Time.now
 
-  until result[0..2] == "000"
+  until result[0..difficulty-1] == "0"*difficulty
     incrementer = rand(1000000000000000000000000)
     result = Digest::SHA256.hexdigest(last_proof.to_s + incrementer.to_s)
     puts "Elapsed time : #{Time.now - now}"
   end
+  puts result
   incrementer
 end
 #---------------------------------------------------------------------------
-def mine(last_block, transactions_to_add)
+def mine(last_block, transactions_to_add, difficulty)
   last_proof = last_block.data['proof-of-work']
-  proof = proof_of_work_zeroes_method(last_proof)
+  proof = proof_of_work_zeroes_method(last_proof, difficulty)
   transaction_list = []
   transaction_list << transactions_to_add
   transaction_list << Transaction.new("network", "1", "miner_address")

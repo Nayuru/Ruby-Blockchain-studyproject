@@ -2,6 +2,7 @@ require_relative 'blockchainlib'
 blockchain = []
 
 def main_process
+  difficulty = 3
   puts_menu
   choice = gets.chomp
   transactions_to_add = []
@@ -12,7 +13,7 @@ def main_process
         blockchain = [create_genesis_block]
       when '1'
         puts "Mining a new block"
-        block_to_add = mine(blockchain.last, transactions_to_add)
+        block_to_add = mine(blockchain.last, transactions_to_add, difficulty)
         blockchain << block_to_add
         puts "A new block has been added : "
         display_block(block_to_add)
