@@ -18,19 +18,19 @@ export class AppComponent implements OnInit {
     }
 
     private startRouteListener(router: Router) {
-        router.events.subscribe((url: NavigationEnd) => {
-          if (url instanceof NavigationEnd && url.urlAfterRedirects) {
-
-            const htmlNavBar = document.getElementById('main-nav-bar');
-            const htmlATagElements = htmlNavBar.getElementsByTagName('a');
-
-            for ( const htmlAElem of [].slice.call(htmlATagElements)) {
-                htmlAElem.classList.remove('active');
-            }
-
-            const htmlActiveATagElement = document.getElementById(url.urlAfterRedirects.substr(1));
-            htmlActiveATagElement.classList.add('active');
-          }
-        });
+        // router.events.subscribe((url: NavigationEnd) => {
+        //   if (url instanceof NavigationEnd && url.urlAfterRedirects) {
+        //
+        //     const htmlNavBar = document.getElementById('main-nav-bar');
+        //     const htmlATagElements = htmlNavBar.getElementsByTagName('a');
+        //
+        //     // for ( const htmlAElem of [].slice.call(htmlATagElements)) {
+        //     //     htmlAElem.classList.remove('active');
+        //     // }
+        //
+        //   //   const htmlActiveATagElement = document.getElementById(url.urlAfterRedirects.substr(1));
+        //   //   htmlActiveATagElement.classList.add('active');
+        //   // }
+        // });
     }
 }

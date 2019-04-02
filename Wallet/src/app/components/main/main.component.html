@@ -3,7 +3,7 @@
     <label class="balance-label"> Balance: </label>
     <div id="balance-value-ctn">
       <div class="balance-value">
-        203.14 £
+        {{mockUserData.balance}} £
       </div>
       <div class="balance-devise">
         SupCoin
@@ -16,7 +16,7 @@
     <div id="monthly-balance-value-ctn">
     <span id="monthly-balance-in-value">
       <span class="balance-value">
-        173.24 £
+        {{mockUserData.monthlyIn}} £
       </span>
       <span class="balance-devise">
         SupCoin
@@ -24,7 +24,7 @@
     </span>
       <span id="monthly-balance-out-value">
       <span class="balance-value">
-        312,52 £
+        {{mockUserData.monthlyOut}} £
       </span>
       <span class="balance-devise">
         SupCoin
@@ -42,65 +42,11 @@
       <th> To/From </th>
       <th> Date </th>
     </tr>
-    <tr>
-      <td> #789456123 </td>
-      <td> +250 </td>
-      <td> AK21Ju </td>
-      <td> 11/05/1998 </td>
-    </tr>
-    <tr>
-      <td> #789111123 </td>
-      <td> -325.32 </td>
-      <td> AL29Jx </td>
-      <td> 11/05/1998 </td>
-    </tr>
-    <tr>
-      <td> #789456144 </td>
-      <td> +56.23 </td>
-      <td> WC241u </td>
-      <td> 11/05/1998 </td>
-    </tr>
-    <tr>
-      <td> #789456523 </td>
-      <td> +44.25 </td>
-      <td> po81Li </td>
-      <td> 11/05/1998 </td>
-    </tr>
-    <tr>
-      <td> #789455523 </td>
-      <td> -321 </td>
-      <td> Ltr21c </td>
-      <td> 11/05/1998 </td>
-    </tr>
-    <tr>
-      <td> #789455523 </td>
-      <td> -321 </td>
-      <td> Ltr21c </td>
-      <td> 11/05/1998 </td>
-    </tr>
-    <tr>
-      <td> #789455523 </td>
-      <td> -321 </td>
-      <td> Ltr21c </td>
-      <td> 11/05/1998 </td>
-    </tr>
-    <tr>
-      <td> #789455523 </td>
-      <td> -321 </td>
-      <td> Ltr21c </td>
-      <td> 11/05/1998 </td>
-    </tr>
-    <tr>
-      <td> #789455523 </td>
-      <td> -321 </td>
-      <td> Ltr21c </td>
-      <td> 11/05/1998 </td>
-    </tr>
-    <tr>
-      <td> #789455523 </td>
-      <td> -321 </td>
-      <td> Ltr21c </td>
-      <td> 11/05/1998 </td>
+    <tr *ngFor="let data of mockData">
+      <td> {{data.id}} </td>
+      <td> {{data.amount}}  </td>
+      <td> {{data.to}}  </td>
+      <td> {{data.date}}  </td>
     </tr>
   </table>
 </div>

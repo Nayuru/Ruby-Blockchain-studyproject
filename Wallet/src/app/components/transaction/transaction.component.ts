@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {ApiService} from '../../services/api/api.service';
 
 @Component({
   selector: 'app-transaction',
@@ -7,9 +8,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TransactionComponent implements OnInit {
 
-  constructor() { }
+  public sendToId: string;
+  public amount: number;
+
+  constructor(private walletService: ApiService) { }
 
   ngOnInit() {
+  }
+
+  private sendTransaction():void {
+    this.walletService.sendTransaction(this.sendToId, this.amount);
   }
 
 }

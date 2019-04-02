@@ -7,6 +7,146 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HistoryComponent implements OnInit {
 
+  protected  mockData = [
+    {
+      id: 'Tjf35jhg',
+      amount: '+250',
+      to: 'Jlfh55e2',
+      date: '23/25/2018'
+    },
+    {
+      id: 'Tjf35jhg',
+      amount: '+250',
+      to: 'Jlfh55e2',
+      date: '23/25/2018'
+    },
+    {
+      id: 'Tjf35jhg',
+      amount: '+250',
+      to: 'Jlfh55e2',
+      date: '23/25/2018'
+    }
+    ,
+    {
+      id: 'Tjf35jhg',
+      amount: '+250',
+      to: 'Jlfh55e2',
+      date: '23/25/2018'
+    }
+    ,
+    {
+      id: 'Tjf35jhg',
+      amount: '+250',
+      to: 'Jlfh55e2',
+      date: '23/25/2018'
+    },
+    {
+      id: 'Tjf35jhg',
+      amount: '+250',
+      to: 'Jlfh55e2',
+      date: '23/25/2018'
+    }
+    ,
+    {
+      id: 'Tjf35jhg',
+      amount: '+250',
+      to: 'Jlfh55e2',
+      date: '23/25/2018'
+    }
+    ,
+    {
+      id: 'Tjf35jhg',
+      amount: '+250',
+      to: 'Jlfh55e2',
+      date: '23/25/2018'
+    },
+    {
+      id: 'Tjf35jhg',
+      amount: '+250',
+      to: 'Jlfh55e2',
+      date: '23/25/2018'
+    },
+    {
+      id: 'Tjf35jhg',
+      amount: '+250',
+      to: 'Jlfh55e2',
+      date: '23/25/2018'
+    }
+    ,
+    {
+      id: 'Tjf35jhg',
+      amount: '+250',
+      to: 'Jlfh55e2',
+      date: '23/25/2018'
+    }
+    ,
+    {
+      id: 'Tjf35jhg',
+      amount: '+250',
+      to: 'Jlfh55e2',
+      date: '23/25/2018'
+    },
+    {
+      id: 'Tjf35jhg',
+      amount: '+250',
+      to: 'Jlfh55e2',
+      date: '23/25/2018'
+    }
+    ,
+    {
+      id: 'Tjf35jhg',
+      amount: '+250',
+      to: 'Jlfh55e2',
+      date: '23/25/2018'
+    }
+    ,
+    {
+      id: 'Tjf35jhg',
+      amount: '+250',
+      to: 'Jlfh55e2',
+      date: '23/25/2018'
+    },
+    {
+      id: 'Tjf35jhg',
+      amount: '+250',
+      to: 'Jlfh55e2',
+      date: '23/25/2018'
+    },
+    {
+      id: 'Tjf35jhg',
+      amount: '+250',
+      to: 'Jlfh55e2',
+      date: '23/25/2018'
+    }
+    ,
+    {
+      id: 'Tjf35jhg',
+      amount: '+250',
+      to: 'Jlfh55e2',
+      date: '23/25/2018'
+    }
+    ,
+    {
+      id: 'Tjf35jhg',
+      amount: '+250',
+      to: 'Jlfh55e2',
+      date: '23/25/2018'
+    },
+    {
+      id: 'Tjf35jhg',
+      amount: '+250',
+      to: 'Jlfh55e2',
+      date: '23/25/2018'
+    }
+    ,
+    {
+      id: 'Tjf35jhg',
+      amount: '+250',
+      to: 'Jlfh55e2',
+      date: '23/25/2018'
+    }
+  ];
+
   constructor() { }
 
   ngOnInit() { }

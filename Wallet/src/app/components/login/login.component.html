@@ -1,7 +1,7 @@
-<form class="login">
+<div class="login">
   <h1 class="login-title">SupCoin Wallet</h1>
-  <input type="text" class="login-input" placeholder="Email Adress" autofocus>
-  <input type="password" class="login-input" placeholder="Password">
-  <input type="submit" value="Log in" class="login-button">
+  <input type="text" [(ngModel)]="userId" class="login-input" placeholder="Email Adress" autofocus>
+  <input type="password" [(ngModel)]="userPwd" class="login-input" placeholder="Password">
+  <button (click)="logIn()" value="Log in" class="login-button">Log In</button>
   <p class="login-lost"><a href="" routerLink="/register">Not registered yet ?</a></p>
-</form>
+</div>
