@@ -19,7 +19,6 @@ module Database
       end
     end
 
-    puts 'Block and transactions successfully added into sqlite3'
   rescue SQLite3::Exception => e
     puts 'Unexpected error. Please verify the database state or the query.'
     puts "Error : #{e}"
