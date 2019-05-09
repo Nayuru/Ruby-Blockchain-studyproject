@@ -1,25 +1,6 @@
 require 'digest'
 require 'date'
-require_relative 'dblib'
-
-#--------------------------------------------------------------------------
-class Transaction
-  attr_accessor :sender, :receiver, :amount
-
-  def initialize(sender, receiver, amount)
-    @sender = sender
-    @receiver = receiver
-    @amount = amount
-  end
-
-  def formalize
-    "@#{@sender}@#{@receiver}@#{@amount}"
-  end
-
-end
-#--------------------------------------------------------------------------
-
-
+require_relative 'transactions'
 #--------------------------------------------------------------------------
 class Block
   attr_accessor :index, :timestamp, :proof, :data, :previous_hash, :hash

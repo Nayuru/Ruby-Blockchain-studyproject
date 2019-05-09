@@ -1,6 +1,8 @@
-require_relative 'blockchainlib'
-require_relative 'dblib'
-require_relative 'tools'
+require_relative 'classes/blocks'
+require_relative 'classes/transactions'
+
+require_relative 'modules/database'
+require_relative 'modules/tools'
 
 def main_process
   process_transactions

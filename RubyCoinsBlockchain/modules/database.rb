@@ -14,7 +14,7 @@ module Database
     block.data.each do |transaction|
       # Ajout des transactions dans la table 'Transactions'
       transaction.each do |datas|
-        query_transaction = "INSERT INTO Transactions VALUES('#{block.index}', '#{datas.sender}', '#{datas.receiver}', '#{datas.amount}')"
+        query_transaction = "INSERT INTO Transactions VALUES('#{block.index}', '#{datas.sender}', '#{datas.receiver}', '#{datas.amount}', '#{datas.timestamp}', '#{datas.hash}')"
         db.execute query_transaction
       end
     end
@@ -40,6 +40,34 @@ module Database
     db.close if db
   end
 
+  def self.get_balance_of_addr(addr)
+    total = 0
+    db = SQLite3::Database.open 'test.db'
+    query = "SELECT * FROM Transactions WHERE RECEIVER = '#{addr}'"
+    result = db.execute query
+
+    result.each do |trans|
+      total += trans[3].to_i
+    end
+    query = "SELECT * FROM Transactions WHERE SENDER = '#{addr}'"
+    result = db.execute query
+    result.each do |trans|
+      total -= trans[3].to_i
+    end
+    total
+  end
+
+  def self.add_a_new_addr(addr)
+    db = SQLite3::Database.open "test.db"
+    query = "INSERT INTO PubAddresses VALUES('#{addr}')"
+    db.execute query
+  end
+
+  def self.verify_addr_exist(addr)
+    db = SQLite3::Database.open 'test.db'
+    query = "SELECT * FROM PubAddresses WHERE publicKeys = '#{addr}'"
+    result = db.execute query
+    result
+  end
+
 end
-
-
