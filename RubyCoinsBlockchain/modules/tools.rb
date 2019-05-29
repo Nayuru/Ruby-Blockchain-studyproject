@@ -5,7 +5,7 @@ module TransactionsLoader
 
   def self.load_from_file
     list = []
-    File.open('../pendings.txt').each do |line|
+    File.open('pendings.txt').each do |line|
       formalized = TransactionsLoader.deformalize(line)
       list << Transaction.new(formalized[1], formalized[2], formalized[3])
     end

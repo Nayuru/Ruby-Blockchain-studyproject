@@ -9,7 +9,7 @@ def main_process
 end
 
 def process_transactions
-  difficulty = 5
+  difficulty = 6
   # Va checker toutes les 5 secondes si de nouvelles transactions sont apparues dans pendings.txt, et si oui, les consumme
   # et les mine.
 
@@ -18,11 +18,15 @@ def process_transactions
 
     unless pending_transactions.empty?
       TransactionsLoader.flush_pendings
+      now = Time.now
       puts 'Found new transactions.'
       puts 'Processing block...'
       block_to_add = Block.launch_mining_process(Database.get_last, pending_transactions, difficulty)
       Database.add_into_db(block_to_add)
+
       puts 'Processed transactions.'
+      ellapsed = Time.now - now
+      puts ellapsed
     end
 
     puts 'Waiting for new pending transactions...'
@@ -30,7 +34,7 @@ def process_transactions
   end
 end
 
-def puts_exit
+def puts_exity
   puts 'Exiting...'
   sleep 2
 end

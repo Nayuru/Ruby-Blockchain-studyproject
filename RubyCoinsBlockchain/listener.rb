@@ -1,0 +1,80 @@
+require 'sinatra'
+require 'json'
+require_relative 'modules/database'
+require_relative 'modules/tools'
+require_relative 'modules/keys-generator'
+$db = Database.new
+
+
+
+def listen_for_blockchains
+  get '/blockchain' do
+    'Received new blockchain'
+  end
+end
+
+def create_users
+  get '/new/user' do
+    psw = params['psw']
+    private_key = KeyGenerator.new_private_key
+    public_key = KeyGenerator.new_public_key(private_key, psw)
+    content_type :json
+    $db.add_a_new_addr(public_key)
+    #Penser à rajouter les users dans la db
+    {pvtkey: private_key, pbckey: public_key}.to_json
+  end
+end
+
+def create_transactions
+  get '/new/tx' do
+    sender = params['s']
+    receiver = params['r']
+    amount = params['a']
+    TransactionsLoader.add_new_tx(sender, receiver, amount)
+    content_type :json
+    {success: true, sender: sender, receiver: receiver, amount: amount}.to_json
+  end
+end
+
+def check_if_user_exist
+  get '/login' do
+    public_key = params['pbc']
+    pass = params['psw']
+    result = $db.verify_addr_exist(public_key, pass)
+    content_type :json
+    { success: result}.to_json
+  end
+end
+
+def get_all_transactions
+  get '/transactions/:user' do
+    addr = params['user']
+    result = $db.get_all_transactions(addr)
+    list = {}
+    puts result.inspect
+    result.each_with_index { |tx, index|
+      list = list.merge(index => {sender: tx[1], receiver: tx[2], amount: tx[3]})
+      puts list.inspect
+    }
+    content_type :json
+    list.to_json
+  end
+end
+
+
+def get_balance
+  get '/amount/:user' do
+    pubkey = params['user']
+    result = $db.get_balance_of_addr(pubkey)
+    content_type :json
+    {balance: result}.to_json
+  end
+end
+
+
+listen_for_blockchains
+create_transactions
+get_balance
+check_if_user_exist
+create_users
+get_all_transactions
