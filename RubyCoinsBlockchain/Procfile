@@ -1,0 +1,3 @@
+listener: ruby listener.rb
+mining: ruby mining.rb
+sender: ruby sender.rb

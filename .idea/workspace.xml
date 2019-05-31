@@ -2,9 +2,16 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4f0e035d-6e13-44d0-8b7b-8b40211c4e43" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/RubyCoinsBlockchain/client.rb" beforeDir="false" afterPath="$PROJECT_DIR$/RubyCoinsBlockchain/client.rb" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/RubyCoinsBlockchain/pendings.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/RubyCoinsBlockchain/sender.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/3PJT.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/3PJT.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/RubyCoinsBlockchain/Gemfile" beforeDir="false" afterPath="$PROJECT_DIR$/RubyCoinsBlockchain/Gemfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/RubyCoinsBlockchain/listener.rb" beforeDir="false" afterPath="$PROJECT_DIR$/RubyCoinsBlockchain/listener.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/RubyCoinsBlockchain/mining.rb" beforeDir="false" afterPath="$PROJECT_DIR$/RubyCoinsBlockchain/mining.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/RubyCoinsBlockchain/modules/database.rb" beforeDir="false" afterPath="$PROJECT_DIR$/RubyCoinsBlockchain/modules/database.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/RubyCoinsBlockchain/modules/tools.rb" beforeDir="false" afterPath="$PROJECT_DIR$/RubyCoinsBlockchain/modules/tools.rb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/RubyCoinsBlockchain/test.db" beforeDir="false" afterPath="$PROJECT_DIR$/RubyCoinsBlockchain/test.db" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pendings.txt" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -17,17 +24,17 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/RubyCoinsBlockchain/mining.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="240">
-              <caret line="16" column="25" selection-start-line="16" selection-start-column="25" selection-end-line="16" selection-end-column="25" />
+            <state relative-caret-position="225">
+              <caret line="15" lean-forward="true" selection-start-line="15" selection-end-line="15" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/RubyCoinsBlockchain/client.rb">
+        <entry file="file://$PROJECT_DIR$/RubyCoinsBlockchain/sender.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="60">
-              <caret line="14" column="16" selection-start-line="14" selection-start-column="16" selection-end-line="14" selection-end-column="16" />
+            <state relative-caret-position="630">
+              <caret line="42" column="12" selection-start-line="42" selection-start-column="12" selection-end-line="42" selection-end-column="12" />
             </state>
           </provider>
         </entry>
@@ -51,6 +58,15 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/RubyCoinsBlockchain/listener.rb">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="805">
+              <caret line="84" column="20" selection-start-line="84" selection-start-column="20" selection-end-line="84" selection-end-column="20" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/RubyCoinsBlockchain/classes/transactions.rb">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="180">
@@ -61,15 +77,6 @@
       </file>
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/RubyCoinsBlockchain/pendings.txt">
-          <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <caret column="23" selection-start-column="23" selection-end-column="23" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/pendings.txt">
           <provider selected="true" editor-type-id="text-editor" />
         </entry>
       </file>
@@ -85,8 +92,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/RubyCoinsBlockchain/Gemfile">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="165">
-              <caret line="11" selection-start-line="11" selection-end-line="11" />
+            <state relative-caret-position="135">
+              <caret line="9" selection-start-line="9" selection-end-line="9" />
             </state>
           </provider>
         </entry>
@@ -94,8 +101,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/RubyCoinsBlockchain/modules/keys-generator.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="330">
-              <caret line="22" selection-start-line="22" selection-end-line="22" />
+            <state relative-caret-position="225">
+              <caret line="15" selection-start-line="15" selection-end-line="15" />
             </state>
           </provider>
         </entry>
@@ -132,18 +139,21 @@
         <option value="$PROJECT_DIR$/RubyCoinsBlockchain/test_create_transactions.rb" />
         <option value="$PROJECT_DIR$/RubyCoinsBlockchain/serv.rb" />
         <option value="$PROJECT_DIR$/RubyCoinsBlockchain/pendings.txt" />
-        <option value="$PROJECT_DIR$/RubyCoinsBlockchain/Gemfile" />
         <option value="$PROJECT_DIR$/RubyCoinsBlockchain/modules/database.rb" />
         <option value="$PROJECT_DIR$/pendings.txt" />
         <option value="$PROJECT_DIR$/RubyCoinsBlockchain/client.rb" />
+        <option value="$PROJECT_DIR$/RubyCoinsBlockchain/Gemfile" />
+        <option value="$PROJECT_DIR$/RubyCoinsBlockchain/listener.rb" />
+        <option value="$PROJECT_DIR$/RubyCoinsBlockchain/mining.rb" />
+        <option value="$PROJECT_DIR$/RubyCoinsBlockchain/sender.rb" />
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
+  <component name="ProjectFrameBounds" extendedState="4">
     <option name="x" value="960" />
-    <option name="y" value="117" />
-    <option name="width" value="950" />
-    <option name="height" value="787" />
+    <option name="y" value="30" />
+    <option name="width" value="960" />
+    <option name="height" value="1014" />
   </component>
   <component name="ProjectView">
     <navigator proportions="" version="1">
@@ -331,23 +341,24 @@
       <workItem from="1557929032757" duration="2793000" />
       <workItem from="1558083651413" duration="10000" />
       <workItem from="1558104035843" duration="23000" />
+      <workItem from="1559332266428" duration="106000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="26106000" />
+    <option name="totallyTimeSpent" value="26212000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="30" width="1920" height="1050" extended-state="6" />
+    <frame x="960" y="30" width="960" height="1014" extended-state="4" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.13767342" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.285558" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="DB Browser" order="2" />
       <window_info id="Favorites" order="3" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Find" order="1" weight="0.3279396" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.61346364" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.32768363" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.61346364" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -431,13 +442,8 @@
     <entry file="file://$PROJECT_DIR$/.gitattributes">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/RubyCoinsBlockchain/mining.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="16" column="25" selection-start-line="16" selection-start-column="25" selection-end-line="16" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/pendings.txt" />
+    <entry file="file://$PROJECT_DIR$/RubyCoinsBlockchain/client.rb" />
     <entry file="file://$PROJECT_DIR$/RubyCoinsBlockchain/classes/blocks.rb">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="420">
@@ -460,13 +466,6 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/RubyCoinsBlockchain/pendings.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="23" selection-start-column="23" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pendings.txt">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/RubyCoinsBlockchain/modules/tools.rb">
@@ -476,24 +475,38 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/RubyCoinsBlockchain/Gemfile">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="11" selection-start-line="11" selection-end-line="11" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/RubyCoinsBlockchain/modules/keys-generator.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="330">
-          <caret line="22" selection-start-line="22" selection-end-line="22" />
+        <state relative-caret-position="225">
+          <caret line="15" selection-start-line="15" selection-end-line="15" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/RubyCoinsBlockchain/client.rb">
+    <entry file="file://$PROJECT_DIR$/RubyCoinsBlockchain/Gemfile">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="14" column="16" selection-start-line="14" selection-start-column="16" selection-end-line="14" selection-end-column="16" />
+        <state relative-caret-position="135">
+          <caret line="9" selection-start-line="9" selection-end-line="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/RubyCoinsBlockchain/listener.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="805">
+          <caret line="84" column="20" selection-start-line="84" selection-start-column="20" selection-end-line="84" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/RubyCoinsBlockchain/mining.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="225">
+          <caret line="15" lean-forward="true" selection-start-line="15" selection-end-line="15" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/RubyCoinsBlockchain/sender.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="630">
+          <caret line="42" column="12" selection-start-line="42" selection-start-column="12" selection-end-line="42" selection-end-column="12" />
         </state>
       </provider>
     </entry>

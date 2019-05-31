@@ -1,15 +1,18 @@
 require 'sinatra'
 require 'json'
+require 'faraday'
 require_relative 'modules/database'
 require_relative 'modules/tools'
 require_relative 'modules/keys-generator'
 $db = Database.new
-
-
+$stdout.sync = true
 
 def listen_for_blockchains
   get '/blockchain' do
-    'Received new blockchain'
+    puts "New peer with a bigger blockchain has been found. Downloading the new blockchain..."
+    reponse = Faraday.get 'http://localhost:6644/new/bc'
+    File.open('qzdqdzdzdqd.db', 'wb') { |fp| fp.write(reponse.body) }
+    puts "Downloading done!"
   end
 end
 
@@ -30,6 +33,7 @@ def create_transactions
     sender = params['s']
     receiver = params['r']
     amount = params['a']
+    puts "Received a new transaction, adding it to the pendings transactions."
     TransactionsLoader.add_new_tx(sender, receiver, amount)
     content_type :json
     {success: true, sender: sender, receiver: receiver, amount: amount}.to_json
@@ -70,6 +74,7 @@ def get_balance
     {balance: result}.to_json
   end
 end
+
 
 
 listen_for_blockchains

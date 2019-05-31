@@ -8,7 +8,8 @@ class Database
   def initialize
     @db = SQLite3::Database.open 'test.db'
   end
-  def self.add_into_db(block)
+
+  def add_into_db(block)
     # Ajout du bloc dans la table 'Blocks'
     query_block = "INSERT INTO Blocks VALUES('#{block.index}', '#{block.timestamp}', '#{block.proof}', '#{block.previous_hash}', '#{block.hash}')"
     db.execute query_block
@@ -38,6 +39,15 @@ class Database
     puts "Error : #{e}"
   end
 
+  def get_last_id
+    query = 'SELECT ID FROM Blocks WHERE ID = (SELECT MAX(ID) FROM Blocks)'
+    result = @db.execute query
+    result
+  rescue SQLite3::Exception => e
+    puts 'Could not load last block in database. Please check the following message for more information : '
+    puts "Error : #{e}"
+  end
+
   def get_balance_of_addr(addr)
     total = 0
 
@@ -55,11 +65,11 @@ class Database
     total
   end
 
-    def get_all_transactions(addr)
-      query = "SELECT * FROM Transactions WHERE RECEIVER = '#{addr}' OR SENDER = '#{addr}'"
-      result = @db.execute query
-      result
-    end
+  def get_all_transactions(addr)
+    query = "SELECT * FROM Transactions WHERE RECEIVER = '#{addr}' OR SENDER = '#{addr}'"
+    result = @db.execute query
+    result
+  end
 
 
   def add_a_new_addr(addr)
