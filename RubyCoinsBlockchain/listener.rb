@@ -6,6 +6,7 @@ require_relative 'modules/tools'
 require_relative 'modules/keys-generator'
 $db = Database.new
 $stdout.sync = true
+set :port, 4567
 
 def listen_for_blockchains
   get '/blockchain' do
